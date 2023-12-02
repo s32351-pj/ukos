@@ -1,4 +1,4 @@
-Korzystając z komend cd oraz mkdir stwórz następujące drzewo katalogów w swoim katalogu domowym (w dowolnym podkatalogu, albo bezpośrednio w ~):
+1. Korzystając z komend cd oraz mkdir stwórz następujące drzewo katalogów w swoim katalogu domowym (w dowolnym podkatalogu, albo bezpośrednio w ~):
 
 ukos
  |\ katalog
@@ -24,10 +24,10 @@ tree, żeby zobaczyć co jest grane i.... nie ma tree. yum, search, install i ma
 6 directories, 0 files
 [ec2-user@ip-172-31-18-48 ~]$
 
-W katalogu ukos/klamka stwórz pliki zajęcia2.txt zajęcia2.log inny.txt nowy.txt
+2. W katalogu ukos/klamka stwórz pliki zajęcia2.txt zajęcia2.log inny.txt nowy.txt
 - touch ukos/klamka/zajęcia2.txt && touch ukos/klamka/zajecia2.log && touch ukos/klamka/inny.txt && touch ukos/klamka/nowy.txt. Znownu tree /home - są pliki.
 
-Za pomocą jednego polecenia mkdir stwórz w katalogu ukos następujący katalog: ukos/to/jest/dluga/nazwa
+3. Za pomocą jednego polecenia mkdir stwórz w katalogu ukos następujący katalog: ukos/to/jest/dluga/nazwa
 - no z parametrem -p a w katalogu ukos... powstanie wtedy drugi ukos/... zgodnie z tym jak zapisane jest to polecenie. (jestem w domowym wciąż) mkdir -p ukos/ukos/to/jest/długa/nazwa. tree /home:
 
 [ec2-user@ip-172-31-18-48 ~]$ tree /home
@@ -49,10 +49,10 @@ Za pomocą jednego polecenia mkdir stwórz w katalogu ukos następujący katalog
                     └── długa
                         └── nazwa
 
-następnie umieść w katalogu ukos/to/jest/dluga/nazwa plik dane.txt
+4. następnie umieść w katalogu ukos/to/jest/dluga/nazwa plik dane.txt
 - touch ukos/ukos/to/jest/długa/nazwa/dane.txt. no utworzyłem, happy.
 
-Usuń z katalogu ukos/klamka wszystkie pliki z rozszerzeniem txt
+5. Usuń z katalogu ukos/klamka wszystkie pliki z rozszerzeniem txt
 - rm ukos/klamka/*.txt
 
 [ec2-user@ip-172-31-18-48 ~]$ tree /home
@@ -72,10 +72,10 @@ Usuń z katalogu ukos/klamka wszystkie pliki z rozszerzeniem txt
                         └── nazwa
                             └── dane.txt
 
-Usuń katalog ukos/katalog/katalog2
+6. Usuń katalog ukos/katalog/katalog2
 - rmdir ukos/katalog/katalog2
 
-Usuń cały katalog klamka za pomocą jednego polecenia
+7. Usuń cały katalog klamka za pomocą jednego polecenia
 -man rmdir, tak samo jak przy mkdir, przełącznik -p. czyli rmdir... a nie jest inny, ale ten -p też się porzyda, zatem: rmdir -p --ignore-fail-on-non-empty ukos/klamka. poszło. ale zaraz, nie działa. ten ignore fail nie powoduje, że kasuje mimo faila, tylko olewa fail i zostawia zawartość wraz z katalogiem. hmm. no to trzeba zrobić takie cuś: rm ukos/klamka/*.* && rmdir -p ukos/klamka/. i pomimo faktu, że wyrzucił błąd, to jednak usunął! *to nie dobrze, gdyż oparty na rezultacie skrypt poszedłby logiczną ścieżką, jak gdyby katalog/plik nie był usunięty. Ale ja nie będę basha naprawiał, jak na razie w kazdym razie:
 
 [ec2-user@ip-172-31-18-48 ~]$ rmdir -p ukos/klamka/
